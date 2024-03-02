@@ -8,6 +8,7 @@
 .navbar{
     background-color: lightblue;
 }
+
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
     padding: 30px 15px;
@@ -33,6 +34,11 @@
 .nav-icons i:hover{
     color: white;
 }
+.navbar-toggler-icon{
+    color: black;
+}
+
+
 /* Logo */
 .logo{
     position: relative;
@@ -51,6 +57,7 @@
 .heading1{
     font-size: 24px;
 }
+
 
 /* About */
 .about{
@@ -84,14 +91,12 @@
     color: black;
 }
 
-/* card2 */
-
 
 /* Product Start */
-.main-txt{
+.main-text{
     margin-top: 50px;
 }
-.main-txt h1{
+.main-text h1{
     text-align: center;
     margin-top: 30px;
     font-weight: 600;
@@ -143,21 +148,19 @@
     position: absolute;
     content: "";
     width: 100%;
-    height: calc(100% - 45px);
+    height:80%;
     top: 135px;
     left: 0;
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/service.jpg) center center no-repeat;
+    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9));
     background-size: cover;
     z-index: -1;
 }
-
-
 
 /* footer */
 #footer{
     width: 100%;
     background-color:rgba(9, 99, 129, 0.87); ;
-    margin-top: 90px;
+    margin-top: 40px;
 }
 #footer h1{
     color: white;
@@ -187,3 +190,27 @@
     color: white;
 }
 /* footer */
+
+@media screen and (max-width:900px){
+.heading{
+    margin-left: 2rem;
+}
+}
+
+@media screen and (max-width: 1000px) {
+    .main {
+        background-color: lightblue;
+        margin-bottom: -20px;
+    }
+    .main .col-lg-4:nth-child(1),
+    .main .col-lg-4:nth-child(3) {
+        display: none;
+    }
+    .navbar-toggler {
+        margin-left: auto;
+        margin-top: -70px;
+    }
+    .service::after {
+        height:90%;
+    }
+}

@@ -299,7 +299,7 @@
 
 @media screen and (max-width:700px){
 .heading{
-    margin-left: 1rem;
+    margin-left:0px;
 }
 }
 
@@ -308,9 +308,11 @@
         background-color: lightblue;
         margin-bottom: -20px;
     }
-    .main .col-lg-4:nth-child(1),
-    .main .col-lg-4:nth-child(3) {
+   .mails {
         display: none;
+    }
+    .calls{
+        display:none;
     }
     .navbar-toggler {
         margin-left: auto;

@@ -7,20 +7,53 @@
 /* navbar */
 .navbar{
     background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
-
+.navbar-dark .navbar-nav{
+    
+   
+    display: flex; 
+}
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
-    padding: 30px 15px;
     font-size: 18px;
     color: black;
-    margin-left: 30px;
     font-weight: bold;
     transition: 0.5s ease;
     cursor: pointer;
+   
 }
+.navbar-dark .navbar-nav .nav-item a{
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    margin: 20px 0;
+    padding: 10px 20px;
+}
+.navbar-dark .navbar-nav .nav-link:before{
+    content: "";
+    position: absolute;
+    top:0; left:20; 
+    width: 60%; height: 80%;
+    border-bottom: 2px solid #0786fd;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: 0.3s;
+}
+
 .navbar-dark .navbar-nav .nav-link:hover{
     color: rgb(16, 16, 221);
+}
+.navbar-dark .navbar-nav .nav-link:hover:before{
+    transform: scaleY(1);
+    opacity: 1;
+}
+.nav-icons {
+    position: absolute;
+    right: 10px; 
 }
 .nav-icons i{
     padding: 10px;
@@ -32,7 +65,11 @@
     cursor: pointer;
 }
 .nav-icons i:hover{
-    color: white;
+    color: rgb(16, 16, 221);
+    box-shadow: 5px 5px 5px #0000005f;
+    border-radius: 50px;
+    padding: 10px 30px;
+    background-color:rgb(132, 207, 232) ;
 }
 .navbar-toggler-icon{
     color: black;
@@ -68,6 +105,15 @@
 }
 
 /* card2 */
+.letter {
+    color: rgba(89, 185, 216, 0.495);
+    text-transform: uppercase;
+    display: inline-block; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-right: 3px; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
 #tpc{
     box-shadow: 0 0 5px black;
     transition: 0.5s ease;
@@ -76,20 +122,69 @@
 #tpc:hover{
     transform: translateY(-10px);
 }
-.card-titel{
-    color: lightcoral;
-}
-#btn2{
-    padding: 1px;
+
+#btn2 {
+    padding: 5px 10px;
     text-decoration: none;
-    background: lightcoral;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
     color: white;
     border-radius: 5px;
+    font-size: 18px;
+    overflow: hidden; 
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    display: inline-block;
 }
-#btn2:hover{
-    background-color: rgb(219, 81, 81);
+
+#btn2 i{
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+#btn2:hover {
+    background: linear-gradient(90deg, #ffffffbf 0%, #ffffffbd 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 200%;
     color: black;
+    animation: buttonBackground 1s;
 }
+
+@keyframes buttonBackground {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#tpc .card-img-overlays {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  #tpc:hover .card-img-overlays {
+    opacity: 1; 
+  }
+  #tpc .card-titel1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  #tpc:hover .card-titel1 {
+    opacity: 1; 
+  }
+
+  #tpc:hover a {
+    opacity: 1; 
+  }
 
 
 /* Product Start */
@@ -102,6 +197,10 @@
     font-weight: 600;
     text-shadow: 0px 1px 1px black;
 }
+.packages{
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
 .packages .card{
     border-radius: 5px;
     border: none;
@@ -110,6 +209,13 @@
 .packages .card img{
     border-radius: 5px;
 }
+.col-md-4 {
+    transition: transform 0.4s ease-in-out;
+}
+.col-md-4:hover {
+    transform: scale(1.05); 
+  }
+
 .packages .card .card-body{
     background: transparent;
 }
@@ -151,8 +257,8 @@
     height:80%;
     top: 135px;
     left: 0;
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9));
-    background-size: cover;
+    background: url("https://i.pinimg.com/564x/d1/08/19/d10819698e0f3e8c27da405a8faacb8a.jpg")bottom;
+    background-position: 30px;
     z-index: -1;
 }
 
@@ -191,9 +297,9 @@
 }
 /* footer */
 
-@media screen and (max-width:900px){
+@media screen and (max-width:700px){
 .heading{
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 }
 
@@ -212,5 +318,8 @@
     }
     .service::after {
         height:90%;
+    }
+    .nav-icons {
+        bottom: 30px;
     }
 }
